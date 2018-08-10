@@ -26,12 +26,12 @@
         <docs/>
         <field_list/>
         <has_preview>false</has_preview>
-        <id>mass_entry</id>
+        <id>mass-entry</id>
         <internal>false</internal>
         <link/>
         <name>mass entry</name>
         <option_schema/>
-        <public>false</public>
+        <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
 	/* populate the 'data' object */
@@ -64,7 +64,7 @@
         <sys_created_on>2018-08-10 17:34:00</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>38d14e520f7393006717590be1050ef6</sys_id>
-        <sys_mod_count>73</sys_mod_count>
+        <sys_mod_count>74</sys_mod_count>
         <sys_name>mass entry</sys_name>
         <sys_package display_value="Raffle" source="x_uocd2_raffle">3736a9860f3753006717590be1050eeb</sys_package>
         <sys_policy/>
@@ -72,7 +72,7 @@
         <sys_scope display_value="Raffle">3736a9860f3753006717590be1050eeb</sys_scope>
         <sys_update_name>sp_widget_38d14e520f7393006717590be1050ef6</sys_update_name>
         <sys_updated_by>admin-eduque</sys_updated_by>
-        <sys_updated_on>2018-08-10 21:52:57</sys_updated_on>
+        <sys_updated_on>2018-08-10 22:31:03</sys_updated_on>
         <template><![CDATA[<div class="widget">
   <p>
     <b>Mass entry form for Raffle: {{data.raffle_name}}</b>
