@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="u_imp_tmpl_x_uocd2_raffle_raffle_entrant" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_import_row</element>
+            <list_id display_value="u_imp_tmpl_x_uocd2_raffle_raffle_entrant" element="NULL" name="u_imp_tmpl_x_uocd2_raffle_raffle_entrant" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">10e94a9a0f7393006717590be1050e28</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>admin-eduque</sys_created_by>
+            <sys_created_on>2018-08-10 18:09:12</sys_created_on>
+            <sys_id>14e94a9a0f7393006717590be1050e28</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin-eduque</sys_updated_by>
+            <sys_updated_on>2018-08-10 18:09:12</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_import_set</element>
+            <list_id display_value="u_imp_tmpl_x_uocd2_raffle_raffle_entrant" element="NULL" name="u_imp_tmpl_x_uocd2_raffle_raffle_entrant" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">10e94a9a0f7393006717590be1050e28</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>admin-eduque</sys_created_by>
+            <sys_created_on>2018-08-10 18:09:12</sys_created_on>
+            <sys_id>94e94a9a0f7393006717590be1050e28</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin-eduque</sys_updated_by>
+            <sys_updated_on>2018-08-10 18:09:12</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_import_state</element>
+            <list_id display_value="u_imp_tmpl_x_uocd2_raffle_raffle_entrant" element="NULL" name="u_imp_tmpl_x_uocd2_raffle_raffle_entrant" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">10e94a9a0f7393006717590be1050e28</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>admin-eduque</sys_created_by>
+            <sys_created_on>2018-08-10 18:09:12</sys_created_on>
+            <sys_id>18e94a9a0f7393006717590be1050e28</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin-eduque</sys_updated_by>
+            <sys_updated_on>2018-08-10 18:09:12</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_target_table</element>
+            <list_id display_value="u_imp_tmpl_x_uocd2_raffle_raffle_entrant" element="NULL" name="u_imp_tmpl_x_uocd2_raffle_raffle_entrant" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">10e94a9a0f7393006717590be1050e28</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>admin-eduque</sys_created_by>
+            <sys_created_on>2018-08-10 18:09:12</sys_created_on>
+            <sys_id>98e94a9a0f7393006717590be1050e28</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin-eduque</sys_updated_by>
+            <sys_updated_on>2018-08-10 18:09:12</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_target_sys_id</element>
+            <list_id display_value="u_imp_tmpl_x_uocd2_raffle_raffle_entrant" element="NULL" name="u_imp_tmpl_x_uocd2_raffle_raffle_entrant" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">10e94a9a0f7393006717590be1050e28</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>admin-eduque</sys_created_by>
+            <sys_created_on>2018-08-10 18:09:12</sys_created_on>
+            <sys_id>1ce94a9a0f7393006717590be1050e28</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin-eduque</sys_updated_by>
+            <sys_updated_on>2018-08-10 18:09:12</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_row_error</element>
+            <list_id display_value="u_imp_tmpl_x_uocd2_raffle_raffle_entrant" element="NULL" name="u_imp_tmpl_x_uocd2_raffle_raffle_entrant" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">10e94a9a0f7393006717590be1050e28</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>admin-eduque</sys_created_by>
+            <sys_created_on>2018-08-10 18:09:12</sys_created_on>
+            <sys_id>9ce94a9a0f7393006717590be1050e28</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin-eduque</sys_updated_by>
+            <sys_updated_on>2018-08-10 18:09:12</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>u_imp_tmpl_x_uocd2_raffle_raffle_entrant</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>admin-eduque</sys_created_by>
+            <sys_created_on>2018-08-10 18:09:12</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_id>10e94a9a0f7393006717590be1050e28</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>u_imp_tmpl_x_uocd2_raffle_raffle_entrant</sys_name>
+            <sys_package display_value="Raffle" source="x_uocd2_raffle">3736a9860f3753006717590be1050eeb</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Raffle">3736a9860f3753006717590be1050eeb</sys_scope>
+            <sys_update_name>sys_ui_list_u_imp_tmpl_x_uocd2_raffle_raffle_entrant_null</sys_update_name>
+            <sys_updated_by>admin-eduque</sys_updated_by>
+            <sys_updated_on>2018-08-10 18:09:12</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

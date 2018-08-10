@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_uocd2_raffle_table" version="2" view="sys_ref_list">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>number</element>
+            <list_id display_value="x_uocd2_raffle_table" element="NULL" name="x_uocd2_raffle_table" parent="NULL" relationship="NULL" sys_domain="global" view="1251d231dc323000e0b25f936628a71d">558596520fb393006717590be1050eca</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>admin-eduque</sys_created_by>
+            <sys_created_on>2018-08-10 19:00:03</sys_created_on>
+            <sys_id>1d8596520fb393006717590be1050eca</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin-eduque</sys_updated_by>
+            <sys_updated_on>2018-08-10 19:00:03</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_uocd2_raffle_table</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>admin-eduque</sys_created_by>
+            <sys_created_on>2018-08-10 19:00:03</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_id>558596520fb393006717590be1050eca</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_uocd2_raffle_table</sys_name>
+            <sys_package display_value="Raffle" source="x_uocd2_raffle">3736a9860f3753006717590be1050eeb</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Raffle">3736a9860f3753006717590be1050eeb</sys_scope>
+            <sys_update_name>sys_ui_list_x_uocd2_raffle_table_sys_ref_list</sys_update_name>
+            <sys_updated_by>admin-eduque</sys_updated_by>
+            <sys_updated_on>2018-08-10 19:00:03</sys_updated_on>
+            <sys_user/>
+            <view display_value="Reference List" name="sys_ref_list">1251d231dc323000e0b25f936628a71d</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

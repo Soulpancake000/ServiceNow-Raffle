@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Raffle Entrant" max_length="40" name="x_uocd2_raffle_raffle_entrant" type="collection">
+        <element label="Entrant Name" max_length="100" name="u_name" type="string"/>
+        <element default="true" label="Present" max_length="40" name="u_present" type="boolean"/>
+        <element label="Raffle" max_length="32" name="u_raffle" reference="x_uocd2_raffle_table" type="reference"/>
+        <element label="Winner" max_length="40" name="u_winner" type="boolean"/>
+        <index name="index">
+            <element name="u_raffle"/>
+        </index>
+    </element>
+</database>

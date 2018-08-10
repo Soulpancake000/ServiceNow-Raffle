@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function($scope) {
+	/* widget controller */
+	var c = this;
+
+	$scope.serverUpdate = function() {
+		c.server.update();
+		//clearInterval(refreshIntervalId);
+	}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.widget {
+  background-color: white;
+  border: 25px solid white;
+  border-radius: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 25px;
+  margin-bottom: 20px;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>mass_entry</id>
+        <internal>false</internal>
+        <link/>
+        <name>mass entry</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+	data.raffle = $sp.getParameter('raffle');
+	data.test = "";
+
+	var gr = new GlideRecord('x_uocd2_raffle_table');
+	gr.get(data.raffle);
+	data.raffle_name = gr.u_raffle_name+''; 
+
+	if (input != null && input.information){
+		var list_of_names = input.information.split('\n');
+		data.validation = list_of_names.join(', ');
+		
+		for (var i = 0; i < list_of_names.length; i++){
+			var gr2 = new GlideRecord('x_uocd2_raffle_raffle_entrant');
+			gr2.initialize();
+			gr2.u_name = list_of_names[i] + '';
+			gr2.u_raffle = gr.sys_id;
+			gr2.insert();
+		}
+
+		data.information = '';
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin-eduque</sys_created_by>
+        <sys_created_on>2018-08-10 17:34:00</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>38d14e520f7393006717590be1050ef6</sys_id>
+        <sys_mod_count>70</sys_mod_count>
+        <sys_name>mass entry</sys_name>
+        <sys_package display_value="Raffle" source="x_uocd2_raffle">3736a9860f3753006717590be1050eeb</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Raffle">3736a9860f3753006717590be1050eeb</sys_scope>
+        <sys_update_name>sp_widget_38d14e520f7393006717590be1050ef6</sys_update_name>
+        <sys_updated_by>admin-eduque</sys_updated_by>
+        <sys_updated_on>2018-08-10 19:06:42</sys_updated_on>
+        <template><![CDATA[<div class="widget">
+  <div class="form-horizontal">
+    <div class="form-group">
+      <div class="control-label col-xs-12 col-md-3">
+      </div>
+      <div class="col-xs-12 col-md-9 form-field">
+        <div class="sn-stream-textarea-container">
+          <p>
+            <b>Mass entry form for Raffle: {{data.raffle_name}}</b>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-xs-12 col-md-3">Description</label>
+      <div class="col-xs-12 col-md-9 form-field">
+        <div class="sn-stream-textarea-container">
+          <textarea class="form-control" ng-model="c.data.information"></textarea>
+        </div>
+        Separate entries by line
+        <div>
+          <p>
+            <button type="button" class="btn btn-default" ng-click="serverUpdate()">Enter into drawing</button>
+          </p>
+          <div ng-if="data.validation != null">
+            Successfully added: {{data.validation}}
+          </div>
+          <p>
+            <a href="?id=raffle_entries&raffle={{data.raffle}}">Return to drawing</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>]]></template>
+    </sp_widget>
+</record_update>

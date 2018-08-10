@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[function goThere(suffix, id) {
+	var url = new GlideURL('/' + suffix + '/');
+	url.addParam('id', 'raffle_entries');
+	url.addParam('raffle', id);	
+	var w = getTopWindow();
+	GlideDialogWindow.get().destroy();
+	w.popupOpenFocus(url.getURL(), 'try_portal_page_raffle', 950, 700, '', false, false);
+}
+
+]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_uocd2_raffle_try_portal_page_raffle.do</endpoint>
+        <html><![CDATA[<j:set var="jvar_page_id" value="${RP.getWindowProperties().raffle_id}"/>
+<g:evaluate var="jvar_gr" object="true" jelly="true">
+	// find existing portals
+	var pm2m = new GlideRecord("sp_portal");
+	pm2m.query();
+	pm2m;
+</g:evaluate>
+
+<j:while test="${pm2m.next()}">
+	<div style="padding:4px;" onclick="goThere('${pm2m.url_suffix}', '${jvar_page_id}')">/${pm2m.url_suffix}/?id=raffle_entries</div>
+</j:while>
+]]></html>
+        <name>try_portal_page_raffle</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin-eduque</sys_created_by>
+        <sys_created_on>2018-08-10 21:14:10</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>3d3436520ff393006717590be1050e5f</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>try_portal_page_raffle</sys_name>
+        <sys_package display_value="Raffle" source="x_uocd2_raffle">3736a9860f3753006717590be1050eeb</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Raffle">3736a9860f3753006717590be1050eeb</sys_scope>
+        <sys_update_name>sys_ui_page_3d3436520ff393006717590be1050e5f</sys_update_name>
+        <sys_updated_by>admin-eduque</sys_updated_by>
+        <sys_updated_on>2018-08-10 21:24:51</sys_updated_on>
+    </sys_ui_page>
+</record_update>
