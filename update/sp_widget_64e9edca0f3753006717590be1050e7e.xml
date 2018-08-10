@@ -230,7 +230,7 @@
         <sys_created_on>2018-08-09 21:10:55</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>64e9edca0f3753006717590be1050e7e</sys_id>
-        <sys_mod_count>340</sys_mod_count>
+        <sys_mod_count>345</sys_mod_count>
         <sys_name>raffle_entries</sys_name>
         <sys_package display_value="Raffle" source="x_uocd2_raffle">3736a9860f3753006717590be1050eeb</sys_package>
         <sys_policy/>
@@ -238,7 +238,7 @@
         <sys_scope display_value="Raffle">3736a9860f3753006717590be1050eeb</sys_scope>
         <sys_update_name>sp_widget_64e9edca0f3753006717590be1050e7e</sys_update_name>
         <sys_updated_by>admin-eduque</sys_updated_by>
-        <sys_updated_on>2018-08-10 21:40:45</sys_updated_on>
+        <sys_updated_on>2018-08-10 21:53:53</sys_updated_on>
         <template><![CDATA[<div class="widget">
   <div>
     <b>Raffle {{data.title}}</b>
@@ -295,17 +295,17 @@
   <div ng-if="data.no_entries == true">
     There are no entries for this raffle yet!
   </div>
+</div>
+<div class="widget">
   <div>
     <form>
       <p>
-        <br>
         Or add another entry: <input class="form-control" type="text" placeholder="Name" ng-model="c.data.entry_name"/>
         <button type="button" class="btn btn-default" ng-click="serverUpdate()">Add to drawing</button>
       </p>
       <p>
         <a href="?id=mass_entry&raffle={{data.raffle}}">Or add entries en masse.</a>
       </p>
-      <br>
       <div class="reset">
         <p>
           <button type="button" class="btn btn-default" ng-click="reset()">Reset all entries</button>
@@ -317,8 +317,8 @@
     That name has already been entered into this drawing.
   </div>
 </div>
-<div class="footlocker">
-  <a href="?id=raffle">Click here</a> to return to the Raffle selection page.
+<div class="widget">
+  <a href="?id=raffle">Click here</a> to return to the raffle selection page.
 </div>
 
 <script type="text/ng-template" id="modalTemplate">
