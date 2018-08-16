@@ -5,13 +5,13 @@
             <element>number</element>
             <position>0</position>
             <sys_created_by>admin-eduque</sys_created_by>
-            <sys_created_on>2018-08-09 20:57:12</sys_created_on>
-            <sys_id>37b669c60f3753006717590be1050e5f</sys_id>
+            <sys_created_on>2018-08-16 21:16:20</sys_created_on>
+            <sys_id>504e6dd00f0ca7006717590be1050e5a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_uocd2_raffle_table" sys_domain="global" view="Default view">5e6621c60f3753006717590be1050eac</sys_ui_section>
             <sys_updated_by>admin-eduque</sys_updated_by>
-            <sys_updated_on>2018-08-09 20:57:12</sys_updated_on>
+            <sys_updated_on>2018-08-16 21:16:20</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -19,13 +19,83 @@
             <element>u_raffle_name</element>
             <position>1</position>
             <sys_created_by>admin-eduque</sys_created_by>
-            <sys_created_on>2018-08-09 20:57:12</sys_created_on>
-            <sys_id>b7b669c60f3753006717590be1050e5f</sys_id>
+            <sys_created_on>2018-08-16 21:16:20</sys_created_on>
+            <sys_id>d04e6dd00f0ca7006717590be1050e5a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_uocd2_raffle_table" sys_domain="global" view="Default view">5e6621c60f3753006717590be1050eac</sys_ui_section>
             <sys_updated_by>admin-eduque</sys_updated_by>
-            <sys_updated_on>2018-08-09 20:57:12</sys_updated_on>
+            <sys_updated_on>2018-08-16 21:16:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_owner</element>
+            <position>2</position>
+            <sys_created_by>admin-eduque</sys_created_by>
+            <sys_created_on>2018-08-16 21:16:20</sys_created_on>
+            <sys_id>544e6dd00f0ca7006717590be1050e5a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_uocd2_raffle_table" sys_domain="global" view="Default view">5e6621c60f3753006717590be1050eac</sys_ui_section>
+            <sys_updated_by>admin-eduque</sys_updated_by>
+            <sys_updated_on>2018-08-16 21:16:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>3</position>
+            <sys_created_by>admin-eduque</sys_created_by>
+            <sys_created_on>2018-08-16 21:16:20</sys_created_on>
+            <sys_id>d44e6dd00f0ca7006717590be1050e5a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_uocd2_raffle_table" sys_domain="global" view="Default view">5e6621c60f3753006717590be1050eac</sys_ui_section>
+            <sys_updated_by>admin-eduque</sys_updated_by>
+            <sys_updated_on>2018-08-16 21:16:20</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_restrict</element>
+            <position>4</position>
+            <sys_created_by>admin-eduque</sys_created_by>
+            <sys_created_on>2018-08-16 21:16:20</sys_created_on>
+            <sys_id>584e6dd00f0ca7006717590be1050e5a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_uocd2_raffle_table" sys_domain="global" view="Default view">5e6621c60f3753006717590be1050eac</sys_ui_section>
+            <sys_updated_by>admin-eduque</sys_updated_by>
+            <sys_updated_on>2018-08-16 21:16:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_users</element>
+            <position>5</position>
+            <sys_created_by>admin-eduque</sys_created_by>
+            <sys_created_on>2018-08-16 21:16:20</sys_created_on>
+            <sys_id>d84e6dd00f0ca7006717590be1050e5a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_uocd2_raffle_table" sys_domain="global" view="Default view">5e6621c60f3753006717590be1050eac</sys_ui_section>
+            <sys_updated_by>admin-eduque</sys_updated_by>
+            <sys_updated_on>2018-08-16 21:16:20</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_groups</element>
+            <position>6</position>
+            <sys_created_by>admin-eduque</sys_created_by>
+            <sys_created_on>2018-08-16 21:16:20</sys_created_on>
+            <sys_id>5c4e6dd00f0ca7006717590be1050e5a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_uocd2_raffle_table" sys_domain="global" view="Default view">5e6621c60f3753006717590be1050eac</sys_ui_section>
+            <sys_updated_by>admin-eduque</sys_updated_by>
+            <sys_updated_on>2018-08-16 21:16:20</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
