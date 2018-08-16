@@ -44,19 +44,24 @@
 		gr2.addQuery('u_winner', true);
 		gr2.orderBy('u_name');
 		gr2.query();
-		var winners = [];
-		while (gr2.next()){
-			winners.push(gr2.u_name+'');
+		if (gr2.getRowCount() > 3){
+			var winners = 'More than three winners';
+			raffle.winners = winners;
+		} else {
+			var winners2 = [];
+			while (gr2.next()){
+				winners2.push(gr2.u_name+'');
+			}
+			raffle.winners = winners2.join(', ');
 		}
-		raffle.winners = winners.join(', ');
-		
+
 		var gr3 = new GlideRecord('x_uocd2_raffle_raffle_entrant');
 		gr3.addQuery('u_raffle', gr.sys_id);
 		gr3.addQuery('u_winner', false);
 		gr3.addQuery('u_present', true);
 		gr3.query();
 		raffle.entries = gr3.getRowCount();
-		
+
 		data.list.push(raffle);
 	}
 })();]]></script>
@@ -66,7 +71,7 @@
         <sys_created_on>2018-08-09 21:01:02</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>f397e10a0f3753006717590be1050e42</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_name>raffle</sys_name>
         <sys_package display_value="Raffle" source="x_uocd2_raffle">3736a9860f3753006717590be1050eeb</sys_package>
         <sys_policy/>
@@ -74,7 +79,7 @@
         <sys_scope display_value="Raffle">3736a9860f3753006717590be1050eeb</sys_scope>
         <sys_update_name>sp_widget_f397e10a0f3753006717590be1050e42</sys_update_name>
         <sys_updated_by>admin-eduque</sys_updated_by>
-        <sys_updated_on>2018-08-10 22:30:00</sys_updated_on>
+        <sys_updated_on>2018-08-16 23:21:23</sys_updated_on>
         <template><![CDATA[<div class="widget">
   <div>
     <p>
