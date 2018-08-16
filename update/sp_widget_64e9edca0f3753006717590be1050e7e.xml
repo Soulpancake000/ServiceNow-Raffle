@@ -49,6 +49,15 @@
 			scope: $scope
 		});
 	}
+	
+	c.openModal2 = function(name, sys_id) {
+		c.data.reset_name = name;
+		c.data.reset_sys_id = sys_id;
+		c.modalInstance = $uibModal.open({
+			templateUrl: 'modalTemplate2',
+			scope: $scope
+		});
+	}
 
 	c.closeModal = function() {
 		c.modalInstance.close();
@@ -56,6 +65,20 @@
 
 	c.removeEntry = function(sys_id) {
 		c.data.confirmed_remove_sys_id = sys_id;
+		c.server.update();
+		c.modalInstance.close();
+	}
+	
+	c.resetResults = function(sys_id) {
+		c.data.picked = false;
+		c.data.confirmed_reset_raffle = sys_id;
+		c.server.update();
+		c.modalInstance.close();
+	}
+	
+	c.removeAllEntries = function(sys_id) {
+		c.data.picked = false;
+		c.data.confirmed_remove_raffle = sys_id;
 		c.server.update();
 		c.modalInstance.close();
 	}
@@ -161,6 +184,34 @@
 		gr9.deleteRecord();
 	}
 	
+	if (input != null && input.confirmed_reset_raffle){
+		var gr11 = new GlideRecord('x_uocd2_raffle_raffle_entrant');
+		gr11.addQuery('u_raffle', input.confirmed_reset_raffle);
+		gr11.addEncodedQuery('u_winner=true^ORu_present=false');
+		gr11.query();
+		while(gr11.next()){
+			gr11.u_winner = false;
+			gr11.u_present = true;
+			gr11.update();
+		}
+		data.confirmed_reset_raffle = false;
+		data.picked = false;
+		data.repick = false;
+		data.winners = '';
+		data.winner = '';
+	}
+	
+	if (input != null && input.confirmed_remove_raffle){
+		var gr12 = new GlideRecord('x_uocd2_raffle_raffle_entrant');
+		gr12.addQuery('u_raffle', input.confirmed_remove_raffle);
+		gr12.deleteMultiple();
+		data.confirmed_remove_raffle = false;
+		data.picked = false;
+		data.repick = false;
+		data.winners = '';
+		data.winner = '';
+	}
+	
 	if (input != null && input.repick == true){
 		data.picked = false;
 		var gr3 = new GlideRecord('x_uocd2_raffle_raffle_entrant');
@@ -232,7 +283,7 @@
         <sys_created_on>2018-08-09 21:10:55</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>64e9edca0f3753006717590be1050e7e</sys_id>
-        <sys_mod_count>358</sys_mod_count>
+        <sys_mod_count>368</sys_mod_count>
         <sys_name>raffle_entries</sys_name>
         <sys_package display_value="Raffle" source="x_uocd2_raffle">3736a9860f3753006717590be1050eeb</sys_package>
         <sys_policy/>
@@ -240,7 +291,7 @@
         <sys_scope display_value="Raffle">3736a9860f3753006717590be1050eeb</sys_scope>
         <sys_update_name>sp_widget_64e9edca0f3753006717590be1050e7e</sys_update_name>
         <sys_updated_by>admin-eduque</sys_updated_by>
-        <sys_updated_on>2018-08-10 22:30:04</sys_updated_on>
+        <sys_updated_on>2018-08-16 22:21:36</sys_updated_on>
         <template><![CDATA[<div class="widget">
   <div>
     <b>Raffle {{data.title}}</b>
@@ -310,7 +361,7 @@
       </p>
       <div class="reset">
         <p>
-          <button type="button" class="btn btn-default" ng-click="reset()">Reset all entries</button>
+          <button class="btn btn-default" ng-click="c.openModal2(data.title, data.raffle)">Reset all entries</button>
         </p>
       </div>
     </form>
@@ -330,6 +381,19 @@
   </div>
 		<div class="panel-footer text-right">
     	<button class="btn btn-primary" ng-click="c.removeEntry(data.remove_sys_id)">${Remove}</button>
+			<button class="btn btn-primary" ng-click="c.closeModal()">${Cancel}</button>
+  </div>
+  </div>
+</script>
+
+<script type="text/ng-template" id="modalTemplate2">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">Reset all entries for {{data.reset_name}}?</h4>
+  </div>
+		<div class="panel-footer text-right">
+    	<button class="btn btn-primary" ng-click="c.resetResults(data.reset_sys_id)">${Reset Results}</button>
+      <button class="btn btn-primary" ng-click="c.removeAllEntries(data.reset_sys_id)">${Remove All Entries}</button>
 			<button class="btn btn-primary" ng-click="c.closeModal()">${Cancel}</button>
   </div>
   </div>
