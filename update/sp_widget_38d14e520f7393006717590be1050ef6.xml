@@ -45,17 +45,22 @@
 
 	if (input != null && input.information){
 		var list_of_names = input.information.split('\n');
-		data.validation = list_of_names.join(', ');
-		
+		var real_list_of_names = [];
+
 		for (var i = 0; i < list_of_names.length; i++){
 			var gr2 = new GlideRecord('x_uocd2_raffle_raffle_entrant');
-			gr2.initialize();
-			gr2.u_name = list_of_names[i] + '';
-			gr2.u_raffle = gr.sys_id;
-			gr2.insert();
+			if (list_of_names[i] != null && list_of_names[i] != ''){
+				gr2.initialize();
+				var u_name = list_of_names[i] + '';
+				gr2.u_name = u_name.trim();
+				real_list_of_names.push(list_of_names[i].trim());
+				gr2.u_raffle = gr.sys_id;
+				gr2.insert();
+			}
 		}
 
 		data.information = '';
+		data.validation = real_list_of_names.join(', ');
 	}
 })();]]></script>
         <servicenow>false</servicenow>
@@ -64,7 +69,7 @@
         <sys_created_on>2018-08-10 17:34:00</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>38d14e520f7393006717590be1050ef6</sys_id>
-        <sys_mod_count>74</sys_mod_count>
+        <sys_mod_count>80</sys_mod_count>
         <sys_name>mass entry</sys_name>
         <sys_package display_value="Raffle" source="x_uocd2_raffle">3736a9860f3753006717590be1050eeb</sys_package>
         <sys_policy/>
@@ -72,13 +77,13 @@
         <sys_scope display_value="Raffle">3736a9860f3753006717590be1050eeb</sys_scope>
         <sys_update_name>sp_widget_38d14e520f7393006717590be1050ef6</sys_update_name>
         <sys_updated_by>admin-eduque</sys_updated_by>
-        <sys_updated_on>2018-08-10 22:31:03</sys_updated_on>
+        <sys_updated_on>2018-08-20 18:09:36</sys_updated_on>
         <template><![CDATA[<div class="widget">
   <p>
     <b>Mass entry form for Raffle: {{data.raffle_name}}</b>
   </p>
   <form>
-    <label>Description</label>
+    <label>Entry list:</label>
     <textarea class="form-control" ng-model="c.data.information"></textarea>
     <p>
       Separate entries by line
