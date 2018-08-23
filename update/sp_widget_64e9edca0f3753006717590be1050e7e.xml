@@ -37,6 +37,8 @@
 	}
 
 	$scope.serverUpdate = function() {
+		c.data.repick = false;
+		c.data.repickandremove = false;
 		c.server.update();
 		//alert(c.data.username);
 	}
@@ -141,6 +143,7 @@
 	data.has_winners = false;
 	data.test = '';
 	data.winners = '';
+	data.wasnt_present = false;
 	if (input != null && input.picked) {
 		data.draw_text = 'Draw another winner!';
 	} else {
@@ -150,7 +153,7 @@
 	var gr7 = new GlideRecord('x_uocd2_raffle_table');
 	gr7.get(data.raffle);
 	data.title = gr7.number + ': ' + gr7.u_raffle_name + '';
-	
+
 	if (input !=null && input.reset == true){
 		var gr10 = new GlideRecord('x_uocd2_raffle_raffle_entrant');
 		gr10.addQuery('u_raffle', data.raffle);
@@ -173,6 +176,11 @@
 		if (gr6.next()){
 			data.already_entered = true;
 			data.entry_name = '';
+			if (gr6.u_present == false) {
+				gr6.u_present = true;
+				gr6.update();
+				data.wasnt_present = true;
+			}
 		} else {
 			var gr5 = new GlideRecord('x_uocd2_raffle_raffle_entrant');
 			gr5.initialize();
@@ -188,7 +196,7 @@
 		gr9.get(input.confirmed_remove_sys_id);
 		gr9.deleteRecord();
 	}
-	
+
 	if (input != null && input.confirmed_reset_raffle){
 		var gr11 = new GlideRecord('x_uocd2_raffle_raffle_entrant');
 		gr11.addQuery('u_raffle', input.confirmed_reset_raffle);
@@ -206,7 +214,7 @@
 		data.winner = '';
 		data.draw_text = 'Draw a winner!';
 	}
-	
+
 	if (input != null && input.confirmed_remove_raffle){
 		var gr12 = new GlideRecord('x_uocd2_raffle_raffle_entrant');
 		gr12.addQuery('u_raffle', input.confirmed_remove_raffle);
@@ -218,7 +226,7 @@
 		data.winner = '';
 		data.draw_text = 'Draw a winner!';
 	}
-	
+
 	if (input != null && input.repick == true){
 		data.picked = false;
 		var gr3 = new GlideRecord('x_uocd2_raffle_raffle_entrant');
@@ -241,6 +249,14 @@
 	data.entrants = gr.getRowCount();
 	if (data.entrants == 0){
 		data.no_entries = true;
+		var gr13 = new GlideRecord('x_uocd2_raffle_raffle_entrant');
+		gr13.addQuery('u_winner', true);
+		gr13.addQuery('u_raffle', data.raffle);
+		gr13.query();
+		while (gr13.next()){
+			data.has_winners = true;
+			data.winners += gr13.u_name + '. ';
+		}
 		var gr4 = new GlideRecord('x_uocd2_raffle_raffle_entrant');
 		gr4.addQuery('u_present', true);
 		gr4.addQuery('u_winner', true);
@@ -272,7 +288,7 @@
 		data.winnerSysID = gr2.sys_id;
 		//data.list.splice(data.winnerID, 1);
 	}
-	
+
 	var gr8 = new GlideRecord('x_uocd2_raffle_raffle_entrant');
 	gr8.addQuery('u_winner', true);
 	gr8.addQuery('u_raffle', data.raffle);
@@ -291,7 +307,7 @@
         <sys_created_on>2018-08-09 21:10:55</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>64e9edca0f3753006717590be1050e7e</sys_id>
-        <sys_mod_count>373</sys_mod_count>
+        <sys_mod_count>386</sys_mod_count>
         <sys_name>raffle_entries</sys_name>
         <sys_package display_value="Raffle" source="x_uocd2_raffle">3736a9860f3753006717590be1050eeb</sys_package>
         <sys_policy/>
@@ -299,7 +315,7 @@
         <sys_scope display_value="Raffle">3736a9860f3753006717590be1050eeb</sys_scope>
         <sys_update_name>sp_widget_64e9edca0f3753006717590be1050e7e</sys_update_name>
         <sys_updated_by>admin-eduque</sys_updated_by>
-        <sys_updated_on>2018-08-20 17:38:52</sys_updated_on>
+        <sys_updated_on>2018-08-23 22:23:06</sys_updated_on>
         <template><![CDATA[<div class="widget">
   <div>
     <b>Raffle {{data.title}}</b>
@@ -353,7 +369,15 @@
       </ng-container>
     </p>
   </div>
-  <div ng-if="data.no_entries == true">
+  <div ng-if="data.no_entries == true && data.has_winners == true">
+    <p>
+      Winners: {{data.winners}}
+    </p>
+    <p>
+      Add more entrants to draw another winner.
+    </p>
+  </div>
+  <div ng-if="data.no_entries == true && data.has_winners == false">
     There are no entries for this raffle yet!
   </div>
 </div>
@@ -367,15 +391,15 @@
       <p>
         <a href="?id=mass_entry&raffle={{data.raffle}}">Or add entries en masse.</a>
       </p>
+      <div ng-if="data.already_entered == true">
+        That name has already been entered into this drawing.<ng-container ng-if="data.wasnt_present == true"> We have added the user back into the drawing.</ng-container>
+      </div>
       <div class="reset">
         <p>
           <button class="btn btn-default" ng-click="c.openModal2(data.title, data.raffle)">Reset all entries</button>
         </p>
       </div>
     </form>
-  </div>
-  <div ng-if="data.already_entered == true">
-    That name has already been entered into this drawing.
   </div>
 </div>
 <div class="widget">
