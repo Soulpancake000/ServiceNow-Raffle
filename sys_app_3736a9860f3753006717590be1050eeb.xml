@@ -16,21 +16,21 @@
         <scoped_administration>false</scoped_administration>
         <short_description/>
         <source>x_uocd2_raffle</source>
-        <store_correlation_id>REPOAPP0000073912</store_correlation_id>
+        <store_correlation_id>REPOAPP0000074530</store_correlation_id>
         <store_url/>
         <sys_class_name>sys_app</sys_class_name>
         <sys_code/>
         <sys_created_by>admin-eduque</sys_created_by>
         <sys_created_on>2018-08-09 20:55:03</sys_created_on>
         <sys_id>3736a9860f3753006717590be1050eeb</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_updated_by>admin-eduque</sys_updated_by>
-        <sys_updated_on>2018-08-20 18:14:40</sys_updated_on>
+        <sys_updated_on>2018-09-26 21:55:11</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <user_role display_value="x_uocd2_raffle.user" name="x_uocd2_raffle.user">8046ad860f3753006717590be1050ee9</user_role>
         <vendor/>
         <vendor_prefix/>
-        <version>1.0.2</version>
+        <version>1.0.4</version>
     </sys_app>
 </record_update>
